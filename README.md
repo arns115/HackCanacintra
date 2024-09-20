@@ -2,11 +2,17 @@
 
 ## Requerimientos del Hackathon
 
+## Problemática
+
+Falta de conciencia sobre el impacto ambiental de las acciones cotidianas.
+
+A menudo, las personas subestiman cómo sus hábitos diarios contribuyen al deterioro del medio ambiente, creyendo que su impacto es insignificante frente al de grandes corporaciones. Sin embargo, si logramos sensibilizar a la población sobre su huella ecológica, pequeños cambios a gran escala pueden tener un efecto transformador. La adopción de hábitos más sostenibles en la vida diaria puede contribuir significativamente a la protección del planeta. Si no tomamos acción a nivel individual, el ritmo de degradación ambiental seguirá aumentando, y las consecuencias serán irreversibles.
+
 ### Descripción general y respuesta a las preguntas planteadas
 
 El usuario final está compuesto por personas conscientes de los problemas medioambientales que buscan reducir su huella de carbono. Estas personas no solo quieren minimizar su impacto ecológico, sino que también desean aprender más sobre hábitos sostenibles y saludables para el medio ambiente. El problema principal que enfrentan es la falta de conocimiento sobre las acciones específicas que pueden tomar para contribuir positivamente al planeta.
 
-La solución que proponemos es una aplicación que les ofrezca datos y consejos útiles sobre cuestiones medioambientales, incentivando la adopción de hábitos y acciones accesibles y realistas. La experiencia que se busca ofrecer es una forma entretenida y práctica de adquirir hábitos que mejoren el entorno y proporcionen la información necesaria para comenzar a reducir el impacto negativo en el medio ambiente, esto mediante retos de duración y nivel de dificultad variada, los cuales ofrecen como recompensa un periodo de tiempo para jugar en alguna de las opciones de minijuegos que ofrecemos.
+La solución que proponemos es una aplicación que les ofrezca datos y consejos útiles sobre cuestiones medioambientales, incentivando la adopción de hábitos y acciones accesibles y realistas. La experiencia que se busca ofrecer es una forma entretenida y práctica de adquirir hábitos que mejoren el entorno y proporcionen la información necesaria para comenzar a reducir el impacto negativo en el medio ambiente, esto mediante retos de duración y nivel de dificultad variada, los cuales ofrecen como recompensa un periodo de tiempo para jugar en alguna de las opciones de minijuegos que ofrecemos, factor que contribuye a la solución del problema de forma diferenciada.
 
 El éxito de esta solución se mide a través de la afluencia al sitio, el tiempo de uso de la aplicación y un sistema de rachas (atributo que recompensa el uso prolongado y constante de la plataforma). Estos indicadores ayudan a evaluar el nivel de compromiso de los usuarios con la app y el impacto que tiene en su comportamiento.
 
