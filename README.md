@@ -66,7 +66,27 @@ Se pueden contemplar tres parámetros para medir el éxito.
 - Completar un objetivo del día para un micro reto te otorga 10 minutos de acceso a un minijuego.
 - Completar un objetivo del día para un reto intermedio te otorga 30 minutos de acceso a un minijuego.
 - Completar un objetivo del día para un reto de alto impacto te otorga 60 minutos de acceso a un minijuego.
-- Al transformar un micro reto en hábito.
+- Al transformar un micro reto en hábito, se otorga un bono para minijuegos de dos horas.
+- Al transformar un reto intermedio en hábito, se otorga un bono para minijuegos de cuatro horas.
+- Al completar un reto de alto impacto, se otorga acceso ilimitado a los minijuegos por 48 horas.
+
+## Requerimientos funcionales.
+
+- Se debe permitir el registro de usuarios.
+- Se debe permitir el inicio de sesión.
+- Se deben lograr interfaces amigables con el usuario.
+
+## Requerimientos no funcionales.
+
+TODO.
+
+## Requerimientos de interfaz.
+
+TODO.
+
+## Palabras clave
+
+TODO.
 
 ##  Contexto
 
