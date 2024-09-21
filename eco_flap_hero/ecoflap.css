@@ -1,0 +1,10 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#board{
+    /*background-color: lightblue;*/
+    background-image: url(./media/background.png);
+
+}
