@@ -3,74 +3,66 @@ import {default as Task} from './task.js'
 const tasks = [
     new Task('¡Menos agua!', 'Tarda 7 minutos o menos en ducharte', 'Micro', 3),
     new Task('Transporte público', 'Usa el transporte público para moverte', 'Micro', 7),
-    new Task('Task 3', 'Recycle plastic waste', 'Intermedio', 12),
-    new Task('Task 4', 'Plant a tree', 'Alto Impacto', 1),
+    new Task('Guardar pet', 'Recycle plastic waste', 'Intermedio', 12),
+    new Task('Iniciar tu huerto', 'Plant a tree', 'Alto-Impacto', 1),
 ];
+
+const menu = document.getElementById('menu');
+const menuOptions = document.getElementById('menu-options');
+
+menu.addEventListener('click', () => {
+    menuOptions.classList.toggle('visible');
+    menuOptions.classList.toggle('hidden');
+});
+
 
 function renderTasks(taskArray) {
     const checkBoxList = document.getElementById('checkBoxList');
+    const timeAmount = document.getElementById('timeAmount');
 
-    // Clear any existing tasks
     checkBoxList.innerHTML = '';
 
-    // Loop through the tasks and create a checkbox and description for each
     taskArray.forEach(task => {
         const taskContainer = document.createElement('div');
-        taskContainer.classList.add('task');
-
+        taskContainer.classList.add('task', task.getTierClass());
         const taskTitle = document.createElement('h3');
         taskTitle.textContent = task.taskName;
 
         const taskDesc = document.createElement('p');
         taskDesc.textContent = task.description;
 
-        const taskTier = document.createElement('p');
-        taskTier.textContent = `Rango: ${task.tier}`;
-
-        const taskConsecutive = document.createElement('p');
-        taskConsecutive.textContent = `Racha: ${task.consecutiveDays}`;
-
         const taskCheckbox = document.createElement('input');
         taskCheckbox.type = 'checkbox';
 
-        // Append elements to the task container
+        taskCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                this.disabled = true;
+
+                let timeIncrease = 0;
+                if (task.tier === 'Micro') {
+                    timeIncrease = 10;
+                } else if (task.tier === 'Intermedio') {
+                    timeIncrease = 30;
+                } else if (task.tier === 'Alto-Impacto') {
+                    timeIncrease = 60;
+                }
+
+                const currentTime = parseInt(timeAmount.textContent);
+                timeAmount.textContent = currentTime + timeIncrease;
+            }
+        });
+
+        const consecutiveDays = document.createElement('div');
+        consecutiveDays.classList.add('consecutive-days');
+        consecutiveDays.innerHTML = `${task.consecutiveDays} <span class="leaf-icon">🍃</span>`;
+
         taskContainer.appendChild(taskCheckbox);
         taskContainer.appendChild(taskTitle);
         taskContainer.appendChild(taskDesc);
-        taskContainer.appendChild(taskTier);
-        taskContainer.appendChild(taskConsecutive);
+        taskContainer.appendChild(consecutiveDays); 
 
-        // Append the task container to the checkbox list
         checkBoxList.appendChild(taskContainer);
     });
 }
-
-function updateCoinCounter(amount) {
-    const coinAmountElement = document.getElementById('timeAmount');
-    coinAmountElement.textContent = amount;
-}
-
-function addTask(taskName) {
-    const checkboxList = document.getElementById('checkBoxList');
-    const newTask = document.createElement('label');
-    newTask.innerHTML = `<input type="checkbox"> ${taskName}`;
-    checkboxList.appendChild(newTask);
-}
-
-function toggleMenu() {
-    const menu = document.getElementById('menu');
-    if (menu.style.display === 'none') {
-        menu.style.display = 'block';
-    } else {
-        menu.style.display = 'none';
-    }
-}
-
-// Example: Modify elements dynamically
-// Update the coin counter
-//updateCoinCounter(200); // Updates to 200 coins
-
-// Add a new task dynamically
-//addTask('New Task 5');
 
 renderTasks(tasks)
