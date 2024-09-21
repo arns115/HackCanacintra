@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash, request
+from flask import Flask, render_template, redirect, url_for, flash, request, jsonify
 from flask_wtf import FlaskForm
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -78,16 +78,77 @@ def signup():
 @app.route('/dashboard')
 @login_required
 def dashboard():
+    username=current_user.username
+    datosA = JSON_to_Info_User(json.loads(current_user.datos))
     return render_template('dashboard.html', name=current_user.username)
+
+@app.route('/activechallenges')
+@login_required
+def userchallenges():
+    # datosA = JSON_to_Info_User(json.loads(current_user.datos))
+    # l = []
+    # for i in range(len(datosA.list_micro_challenges)):
+        # l.append(0)
+	# l.append(datosA.list_micro_challenges[i])
+	# l.append(datosA.cur_days_micro[i])
+    # for i in range(len(datosA.list_intermediate_challenges)):
+	# l.append(1)
+	# l.append(datosA.list_intermediate_challenges[i])
+	# l.append(datosA.cur_days_intermediate[i])
+    # for i in range(len(datosA.list_high_impact_challenges)):
+	# l.append(2)
+	# l.append(datosA.list_high_impact_challenges[i])
+	# l.append(datosA.cur_days_high_impact[i])
+    # json.dumps(l)
+    
+    return render_template('userchallenges.html')
+  
+@app.route('/game')
+@login_required
+def go_to_games():
+    return render_template('games.html')
+  
+  
+@app.route('/habits')
+@login_required
+def go_to_habits():
+    return render_template('habitos.html')
+  
+@app.route('/challengestoadd')
+@login_required
+def go_to_challenges():
+    return render_template('anadir_retos.html')
+  
+    
+    
+@app.route('/action1', methods=['POST'])
+@login_required
+def button1():
+    return redirect(url_for(''))    
+
+@app.route('/action2', methods=['POST'])
+@login_required
+def button2():
+    return redirect(url_for('userchallenges'))    
+
+@app.route('/action3', methods=['POST'])
+@login_required
+def button3():
+    return redirect(url_for('go_to_habits'))    
+
+@app.route('/action4', methods=['POST'])
+@login_required
+def button4():
+    return redirect(url_for('go_to_challenges'))    
+
 
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('home'))
-
-def show_dif_challenges():
     
+
 
 if __name__ == '__main__':
     with app.app_context():

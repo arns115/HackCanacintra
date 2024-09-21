@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <!--Links de prueba en el entorno de Arns y Gus, cambiar en caso de ser necesario-->
+    <h2>CUENTA</h2>
+    <button onclick="location.href='http://127.0.0.1:5500/eco_flap_hero/index.html'" type="button">
+        Ir a Juegos</button>
+    <button onclick="location.href='http://127.0.0.1:5500/challenges/userchallenges.html'" type="button">
+        Ir a Retos</button>
+    <button onclick="location.href=''" type="button">
+         Habitos </button>
+    <button onclick="location.href=''" type="button">
+        Añadir retos</button>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
