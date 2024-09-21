@@ -34,6 +34,12 @@ let dy = 0 // Velocity in Y
 let d2y = 0.4 // Gravity accel 
 const GEN_INTERVAL = 3100
 
+// Timer logic
+
+let timeRemaining = 15 * 60; // 15 minutes in seconds
+let timerInterval;
+
+
 let character = {
     height : char_height-80,
     width: char_width,
@@ -72,6 +78,7 @@ window.onload = function(){
 
     requestAnimationFrame(update)
     setInterval(generatePipes, GEN_INTERVAL)
+    timerInterval = setInterval(updateTimer, 1000); 
     document.addEventListener("keydown", jump)
 }
 
@@ -87,14 +94,14 @@ function update(){
     context.drawImage(charAsset ,character.x,character.y-40, character.width, character.height+80)
 
 
-    let hitboxWidth = character.width;
-    let hitboxHeight = character.height;
-    let hitboxX = character.x + (character.width - hitboxWidth);
-    let hitboxY = character.y + (character.height - hitboxHeight);
+    // let hitboxWidth = character.width;
+    //let hitboxHeight = character.height;
+    //let hitboxX = character.x + (character.width - hitboxWidth);
+    //let hitboxY = character.y + (character.height - hitboxHeight);
 
-    context.strokeStyle = "red"; // Color for hitbox
-    context.lineWidth = 2; // Thickness of hitbox lines
-    context.strokeRect(hitboxX, hitboxY, hitboxWidth, hitboxHeight);
+    //context.strokeStyle = "red"; // Color for hitbox
+    //context.lineWidth = 2; // Thickness of hitbox lines
+    //context.strokeRect(hitboxX, hitboxY, hitboxWidth, hitboxHeight);
 
     if(character.y > board.height){
         isGameOver = true
@@ -123,6 +130,13 @@ function update(){
     context.fillStyle = "black"
     context.font = "45px 'Press Start 2P', cursive"
     context.fillText(score,5,45)
+    // Draw the timer in the top-right corner
+    let minutes = Math.floor(timeRemaining / 60)
+    let seconds = timeRemaining % 60
+    let formattedTime = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds
+    context.fillStyle = "green"
+    context.font = "35px 'Press Start 2P', cursive"
+    context.fillText(formattedTime, BOARD_WIDTH - 180, 45) // Adjust the position as needed
 }
 
 function generatePipes(){
@@ -180,4 +194,23 @@ function checkCollision(objA, objB){
 
 function passCheck(objA,objB){
     return objA.x > objB.x + objB.width
+}
+
+function updateTimer() {
+    if (timeRemaining <= 0) {
+        clearInterval(timerInterval);
+        isGameOver = true;
+        return;
+    }
+    
+    timeRemaining--;
+
+    let minutes = Math.floor(timeRemaining / 60);
+    let seconds = timeRemaining % 60;
+
+    let formattedTime = 
+        (minutes < 10 ? "0" : "") + minutes + ":" + 
+        (seconds < 10 ? "0" : "") + seconds;
+
+    document.getElementById("timer").textContent = formattedTime;
 }
