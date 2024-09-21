@@ -12,9 +12,10 @@
         Ir a Juegos</button>
     <button onclick="location.href='http://127.0.0.1:5500/challenges/userchallenges.html'" type="button">
         Ir a Retos</button>
-    <button onclick="location.href=''" type="button">
-         Habitos </button>
-    <button onclick="location.href=''" type="button">
+        <form action="{{ url_for('button3') }}" method="POST">
+            <button type="submit">Habitos</button>
+        </form>
+    <button onclick="location.href='http://127.0.0.1:5000/dashboard/.html'" type="button">
         Añadir retos</button>
     <a href="{{ url_for('logout') }}">Logout</a>
 </body>
