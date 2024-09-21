@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%; 
+    max-width: 800px; 
+    box-sizing: border-box;
+}
+
+.checkbox-list h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.checkbox-list p {
+    margin: 5px 0;
+}
+
+.checkbox-list input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.task {
+    position: relative; 
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.task .consecutive-days {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.consecutive-days .leaf-icon {
+    margin-left: 5px;
+    font-size: 20px; 
+}
+
+
+.task.Micro {
+    background-color: #add8e6; 
+    color: darkblue
+}
+
+.task.Intermedio {
+    background-color: #90ee90; 
+    color: darkgreen
+}
+
+.task.Alto-Impacto {
+    background-color: #dda0dd; 
+    color: darkviolet
+}
+
+.task {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+
+/* Back button styling */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.back-button svg {
+    width: 44px;
+    height: 44px;
+    stroke: #2c3e50;
+}
+
+/* Checkbox list container styling */
+.checkbox-list {
+    margin-top: 60px; /* Give space below the back button */
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Add to list button styling */
+.add-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.add-to-list-btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-to-list-btn:hover {
+    background-color: #1976D2;
+}
+
+/* Añadir reto section styling */
+.add-challenge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.add-challenge input {
+    padding: 10px;
+    width: 80%; /* Adjust as needed */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-challenge button {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-challenge button:hover {
+    background-color: #1976D2;
+}

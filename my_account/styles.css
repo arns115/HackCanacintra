@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: rgb(217, 255, 167);
+    position: relative;
+}
+
+.greeting {
+    position: absolute;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.sweep-menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: darkgreen;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.menu-options {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 150px;
+    z-index: 100;
+    display: none;
+}
+
+.menu-options li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-options li:last-child {
+    border-bottom: none;
+}
+
+.menu-options li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.menu-options li a:hover {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-button {
+    width: 250px;
+    height: auto;
+    cursor: pointer;
+    /*opacity: 1;*/
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+        opacity: 1;
+        scale: 110%;
+    }
+}

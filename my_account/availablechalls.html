@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tus retos</title>
+    <link rel="stylesheet" href="avalchalls.css">
+</head>
+<body>
+    <div class="back-button" id="backbutton">
+        <a href="previous-page.html"> <!-- Link to the previous page -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 12l14 0" />
+                <path d="M5 12l4 4" />
+                <path d="M5 12l4 -4" />
+            </svg>
+        </a>
+    </div>
+    
+    <div class="checkbox-list" id="checkBoxList">
+        <!-- Dynamically generated checkboxes will go here -->
+    </div>
+
+    <!-- Añadir reto section -->
+    <div class="add-challenge">
+        <input type="text" id="newChallenge" placeholder="Añadir reto" />
+        <button id="addChallengeButton">Añadir reto</button>
+    </div>
+
+    <script type="module" src="challs.js"></script>
+</body>
+</html>
